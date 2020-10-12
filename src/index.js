@@ -1,10 +1,10 @@
 module.exports = function check(str, bracketsConfig) {
-    var res = true;
-    var cicleStr = str;
-    for (var i = 0; i < bracketsConfig.length; i++) {
-        var open = bracketsConfig[i][0];
-        var close = bracketsConfig[i][1];
-        var strCopy = removeBrackets(cicleStr, open, close);
+    let res = true;
+    let cicleStr = str;
+    for (let i = 0; i < bracketsConfig.length; i++) {
+        let open = bracketsConfig[i][0];
+        let close = bracketsConfig[i][1];
+        let strCopy = removeBrackets(cicleStr, open, close);
         if (strCopy === "") {
             res = true;
         } else if ((i === bracketsConfig.length - 1) && str === cicleStr) {
