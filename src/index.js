@@ -1,4 +1,5 @@
 module.exports = function check(str, bracketsConfig) {
+    
     let res = true;
     let cicleStr = str;
     for (let i = 0; i < bracketsConfig.length; i++) {
@@ -9,14 +10,15 @@ module.exports = function check(str, bracketsConfig) {
             res = true;
         } else if ((i === bracketsConfig.length - 1) && str === cicleStr) {
             res = false;
-        } else if ((i === bracketsConfig.length - 1) && str !== cicleStr) {
+        }
+        cicleStr = strCopy;
+        if ((i === bracketsConfig.length - 1) && str !== cicleStr) {
             i = -1;
             str = cicleStr;
         }
-        cicleStr = strCopy;
     }
     return res;
-}
+};
 
 function removeBrackets(str, open, close) {
     let result = str;
